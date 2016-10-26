@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: password
+  host: localhost
+
+development:
+  <<: *default
+  database: angular2_chat_api_development
+
+test:
+  <<: *default
+  database: angular2_chat_api_test
+
+production:
+  <<: *default
+  database: angular2_chat_api_production
