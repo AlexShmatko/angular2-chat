@@ -13,7 +13,7 @@ gem 'turbolinks', '~> 5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'active_model_serializers'
 gem 'rack-cors'
-gem 'decent_exposure', '3.0.0'
+gem 'decent_exposure', '~> 3.0.0'
 
 group :development, :test do
   gem 'pry'
