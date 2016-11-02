@@ -11,9 +11,20 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'bcrypt', '~> 3.1.7'
+gem 'active_model_serializers'
+gem 'rack-cors'
+gem 'decent_exposure', '~> 3.0.0'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~> 4.5'
+  gem 'faker'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'database_cleaner', '~> 1.5'
 end
 
 group :development do

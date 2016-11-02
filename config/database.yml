@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: angular2_chat_api_development
+  database: angular2_chat_development
 
 test:
   <<: *default
-  database: angular2_chat_api_test
+  database: angular2_chat_test
 
 production:
   <<: *default
-  database: angular2_chat_api_production
+  database: angular2_chat_production
