@@ -8,6 +8,6 @@ class Api::V1::BaseController < ActionController::API
   }
 
   def authenticate_user!
-    head :unathorized unless current_user
+    head(:unathorized) unless current_user
   end
 end

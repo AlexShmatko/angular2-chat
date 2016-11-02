@@ -4,12 +4,8 @@ class Api::V1::UsersController < Api::V1::BaseController
   expose :user
 
   def create
-    user = User.create(user_params)
-    if user.save
-      render json: user, status: :accepted
-    else
-      render json: { status: :error, errors: user.errors.messages }, status: 422
-    end
+    return render json: user, status: :accepted if user.save
+    render json: { status: :error, errors: user.errors.messages }, status: 422
   end
 
   private

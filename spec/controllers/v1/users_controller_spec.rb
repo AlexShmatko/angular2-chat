@@ -8,15 +8,18 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
   context 'user authentication' do
     it 'creates user' do
-      expect { post :create, params: { user: user_attributes } }.to change(User, :count).by(1)
+      post :create, params: { user: user_attributes }
+      expect(json['token']).to_not be_nil()
     end
 
     it "doesn't create user with blank attributes" do
-      expect { post :create, params: { user: user_blank_attributes } }.to_not change(User, :count)
+      post :create, params: { user: user_blank_attributes }
+      expect(json['token']).to be_nil()
     end
 
     it "doesn't create user when password confirmation is wrong" do
-      expect { post :create, params: { user: user_wrong_password_confirmation } }.to_not change(User, :count)
+      post :create, params: { user: user_wrong_password_confirmation }
+      expect(json['token']).to be_nil()
     end
   end
 end
