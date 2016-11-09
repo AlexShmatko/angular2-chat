@@ -5,7 +5,7 @@ import Config from '../../config';
 
 let repeatableStartKarma = (done: any, config: any = {}) => {
   return new (<any>karma).Server(Object.assign({
-    configFile: join(process.cwd(), 'karma.conf.js'),
+    configFile: join(process.cwd(), './frontend/karma.conf.js'),
     singleRun: true
   }, config), (exitCode: any) => {
     // Karma run is finished but do not exit the process for failure. Rather just mark this task as done.
@@ -20,7 +20,7 @@ export = (done: any) => {
     },
     reporters: ['mocha', 'coverage', 'karma-remap-istanbul'],
     coverageReporter: {
-      dir: 'coverage_js/',
+      dir: 'frontend/coverage_js/',
       reporters: [
         { type: 'json', subdir: '.', file: 'coverage-final.json' },
         { type: 'html', subdir: '.' }
