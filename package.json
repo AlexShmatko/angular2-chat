@@ -1,9 +1,9 @@
 {
-  "name": "angular2-seed",
-  "version": "0.0.0",
-  "description": "High-quality, modular starter (seed) project for Angular 2 apps with statically typed build and AoT",
+  "name": "angular2-chat",
+  "version": "0.0.1",
+  "description": "Angular2 Chat",
   "repository": {
-    "url": "https://github.com/mgechev/angular2-seed"
+    "url": "https://github.com/AlexShmatko/angular2-chat"
   },
   "scripts": {
     "build.dev": "gulp build.dev --color --config-env dev",
@@ -36,7 +36,7 @@
     "webdriver-start": "webdriver-manager start",
     "webdriver-update": "webdriver-manager update"
   },
-  "author": "Minko Gechev <mgechev>",
+  "author": "Alex Shmatko",
   "license": "MIT",
   "devDependencies": {
     "@angular/compiler-cli": "^2.1.0",
@@ -129,6 +129,7 @@
     "@angular/platform-browser-dynamic": "^2.1.0",
     "@angular/router": "^3.1.0",
     "core-js": "^2.4.1",
+    "proxy-middleware": "^0.15.0",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.39",

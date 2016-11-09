@@ -53,7 +53,7 @@ export class SeedConfig {
   /**
    * The root folder of the project (up two levels from the current directory).
    */
-  PROJECT_ROOT = join(__dirname, '../..');
+  PROJECT_ROOT = join(__dirname, '../../..');
 
   /**
    * The current environment.
@@ -86,7 +86,7 @@ export class SeedConfig {
   * The path to the coverage output
   * NB: this must match what is configured in ./karma.conf.js
   */
-  COVERAGE_DIR = 'coverage';
+  COVERAGE_DIR = 'frontend/coverage';
 
   /**
    * Karma reporter configuration
@@ -182,7 +182,7 @@ export class SeedConfig {
    * The base folder of the applications source files.
    * @type {string}
    */
-  APP_SRC = `src/${this.APP_CLIENT}`;
+  APP_SRC = `frontend/src/${this.APP_CLIENT}`;
 
   /**
    * The folder of the applications asset files.
@@ -200,7 +200,7 @@ export class SeedConfig {
    * The directory of the applications tools
    * @type {string}
    */
-  TOOLS_DIR = 'tools';
+  TOOLS_DIR = 'frontend/tools';
 
   /**
    * The directory of the tasks provided by the seed.
@@ -217,7 +217,7 @@ export class SeedConfig {
    * The base folder for built files.
    * @type {string}
    */
-  DIST_DIR = 'dist';
+  DIST_DIR = 'frontend/dist';
 
   /**
    * The folder for built files in the `dev` environment.
@@ -364,7 +364,7 @@ export class SeedConfig {
 
       'app/*': '/app/*',
       // For test config
-      'dist/dev/*': '/base/dist/dev/*',
+      'frontend/dist/dev/*': '/base/frontend/dist/dev/*',
       '*': 'node_modules/*'
     },
     packages: {
@@ -590,7 +590,7 @@ function filterDependency(env: string, d: InjectableDependency): boolean {
  * @return {number} The applications version.
  */
 function appVersion(): number | string {
-  var pkg = require('../../package.json');
+  var pkg = require('../../../package.json');
   return pkg.version;
 }
 
