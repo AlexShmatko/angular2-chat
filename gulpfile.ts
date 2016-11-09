@@ -2,8 +2,8 @@ import * as gulp from 'gulp';
 import * as util from 'gulp-util';
 import * as runSequence from 'run-sequence';
 
-import Config from './tools/config';
-import { loadTasks } from './tools/utils';
+import Config from './frontend/tools/config';
+import { loadTasks } from './frontend/tools/utils';
 
 
 loadTasks(Config.SEED_TASKS_DIR);

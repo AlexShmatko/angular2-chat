@@ -8,7 +8,7 @@ module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: './',
+    basePath: '../',
 
 
     // frameworks to use
@@ -44,22 +44,22 @@ module.exports = function (config) {
       { pattern: 'node_modules/@angular/**/*.js', included: false, watched: true },
       { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
 
-      { pattern: 'dist/dev/**/*.js', included: false, watched: true },
-      { pattern: 'dist/dev/**/*.html', included: false, watched: true, served: true },
-      { pattern: 'dist/dev/**/*.css', included: false, watched: true, served: true },
+      { pattern: 'frontend/dist/dev/**/*.js', included: false, watched: true },
+      { pattern: 'frontend/dist/dev/**/*.html', included: false, watched: true, served: true },
+      { pattern: 'frontend/dist/dev/**/*.css', included: false, watched: true, served: true },
       { pattern: 'node_modules/systemjs/dist/system-polyfills.js', included: false, watched: false }, // PhantomJS2 (and possibly others) might require it
 
       // suppress annoying 404 warnings for resources, images, etc.
-      { pattern: 'dist/dev/assets/**/*', watched: false, included: false, served: true },
+      { pattern: 'frontend/dist/dev/assets/**/*', watched: false, included: false, served: true },
 
-      'test-config.js',
-      'dist/dev/app/system-config.js',
-      'test-main.js'
+      'frontend/test-config.js',
+      'frontend/dist/dev/app/system-config.js',
+      'frontend/test-main.js'
     ],
 
     // must go along with above, suppress annoying 404 warnings.
     proxies: {
-      '/assets/': '/base/dist/dev/assets/'
+      '/assets/': '/base/frontend/dist/dev/assets/'
     },
 
     // list of files to exclude

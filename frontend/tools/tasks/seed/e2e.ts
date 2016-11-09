@@ -23,11 +23,11 @@ class Protractor {
  */
 export = (done: any) => {
   new Protractor()
-    .server(5555, './dist/prod')
+    .server(5555, './frontend/dist/prod')
     .then((server: any) => {
       gulp
-        .src('./dist/dev/**/*.e2e-spec.js')
-        .pipe(protractor({ configFile: 'protractor.conf.js' }))
+        .src('./frontend/dist/dev/**/*.e2e-spec.js')
+        .pipe(protractor({ configFile: './frontend/protractor.conf.js' }))
         .on('error', (error: string) => { throw error; })
         .on('end', () => { server.close(done); });
     });
